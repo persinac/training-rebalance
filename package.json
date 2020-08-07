@@ -11,7 +11,8 @@
     "start-dev": "set NODE_ENV=dev&& netlify-lambda serve output/functions -c ./webpack.config.js",
     "start": "netlify-lambda serve output/functions -c ./webpack.config.js",
     "build": "netlify-lambda build output/functions -c ./webpack.config.js",
-    "prep-run": "npm run ts-prebuild && npm run ts-build && npm run build"
+    "prep-run": "npm run ts-prebuild && npm run ts-build && npm run build",
+    "prod-run": "npm i && npm run ts-prebuild && npm run ts-build && npm run build"
   },
   "dependencies": {
     "@types/node": "^12.12.32",
