@@ -1,0 +1,6 @@
+[build]
+  functions = "output/functions-build"
+  # This will be run the site build
+  command = "npm run prep-run"
+  # This is the directory is publishing to netlify's CDN
+  publish = "output"

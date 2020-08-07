@@ -1,0 +1,41 @@
+{
+  "name": "training-rebalance-api",
+  "version": "0.0.1",
+  "description": "Training Rebalance api",
+  "author": "Alex Persinger",
+  "license": "MIT",
+  "scripts": {
+    "ts-build": "tsc",
+    "ts-prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "bootstrap": "node ./scripts/bootstrap-faunadb.js",
+    "start-dev": "set NODE_ENV=dev&& netlify-lambda serve output/functions -c ./webpack.config.js",
+    "start": "netlify-lambda serve output/functions -c ./webpack.config.js",
+    "build": "netlify-lambda build output/functions -c ./webpack.config.js",
+    "prep-run": "npm run ts-prebuild && npm run ts-build && npm run build"
+  },
+  "dependencies": {
+    "@types/node": "^12.12.32",
+    "@types/express": "latest",
+    "chalk": "latest",
+    "dotenv": "latest",
+    "env-var": "^6.3.0",
+    "faunadb": "^2.14.2",
+    "path": "latest",
+    "ts-node": "^8.10.2",
+    "typeorm": "^0.2.25",
+    "typescript": "^3.9.5",
+    "express": "latest"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^2.0.1",
+    "tslint": "^6.1.3"
+  },
+  "proxy": {
+    "/.netlify/functions": {
+      "target": "http://localhost:9000",
+      "pathRewrite": {
+        "^/\\.netlify/functions": ""
+      }
+    }
+  }
+}
