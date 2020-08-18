@@ -17,6 +17,7 @@
   "dependencies": {
     "@types/node": "^12.12.32",
     "@types/express": "latest",
+    "encoding": "latest",
     "chalk": "latest",
     "dotenv": "latest",
     "env-var": "^6.3.0",
@@ -29,7 +30,6 @@
     "netlify-lambda": "latest"
   },
   "devDependencies": {
-
     "tslint": "^6.1.3"
   },
   "proxy": {

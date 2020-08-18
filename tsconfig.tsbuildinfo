@@ -471,8 +471,13 @@
         "signature": "2b1deb97c20c820fd010ec3ba370b10b0e41c027dca15fa749fcc6244d759c3a",
         "affectsGlobalScope": false
       },
+      "./src/utility/functioncallutils.ts": {
+        "version": "a72e0a99b058f0efa415a130a58e9fed9ffc02ee75c43b85fa5097885fc6083c",
+        "signature": "9e132c99a5b3e052c43646f861dbc6f0856a1a010066cc28e4154a303a5d58fd",
+        "affectsGlobalScope": false
+      },
       "./src/functions/muscles.ts": {
-        "version": "7a1832e667a139578968fab4acb88e6687c7e7cecf03f01bddda8890787476aa",
+        "version": "c063ae6e3ca502c70aaf2c4d24a6cd041e610f737a64415e468355aea553915e",
         "signature": "f7b6adefeb81aab6b97a1e27d205a4312761fb54cd26d9bdd1f959671d5949e7",
         "affectsGlobalScope": false
       },
@@ -1169,7 +1174,8 @@
         "./node_modules/@types/node/util.d.ts",
         "./src/config.ts",
         "./src/constants/collections.ts",
-        "./src/response/responsebuilder.ts"
+        "./src/response/responsebuilder.ts",
+        "./src/utility/functioncallutils.ts"
       ],
       "./src/functions/todo-create-2.ts": [
         "./node_modules/@types/node/fs.d.ts",
@@ -1186,6 +1192,12 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/vm.d.ts"
+      ],
+      "./src/utility/functioncallutils.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/@types/node/util.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -1935,7 +1947,8 @@
       "./src/constants/collections.ts",
       "./src/functions/muscles.ts",
       "./src/functions/todo-create-2.ts",
-      "./src/response/responsebuilder.ts"
+      "./src/response/responsebuilder.ts",
+      "./src/utility/functioncallutils.ts"
     ]
   },
   "version": "3.9.7"
