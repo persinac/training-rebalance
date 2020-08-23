@@ -4,3 +4,8 @@
   command = "npm run prod-run"
   # This is the directory is publishing to netlify's CDN
   publish = "output"
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
