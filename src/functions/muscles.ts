@@ -50,10 +50,46 @@ function getData(data) {
     } else {
         const parsedData = JSON.parse(data);
         return client.query(
-            q.Get(
-                q.Match(
-                    q.Index(`all_${Collection.MUSCLES}`),
-                    parsedData.name
+            /*
+            * First Param: array
+            * Second Param: lambda
+            *
+            * The Map function iterates on the provided array, calling the provided lambda
+            * function repeatedly with each item in array, and returns the results of all
+            * invocations in a new array of the same type
+            * */
+            q.Map(
+                q.Filter(
+                    /*
+                    * So basically, how I understand this is:
+                    *
+                    * Paginate pulls a paginated array from all index <value>
+                    * filter then iterates through each item per page
+                    * Lambda then creates this muscleRef variable 'points' to the current item
+                    * The current item is retrieved via q.Get(q.Var(<var))
+                    * We select the data and name from the retrieved var
+                    * Then check if the current document (var) contains the string
+                    * If true, return doc from filter, else nothing
+                    *
+                    * Honestly seems like a lot of work for a simple solution and not quite scalable,
+                    * but it searches and works for now.
+                    * */
+                    q.Paginate(q.Match(q.Index(`literally_all_${Collection.MUSCLES}`))),
+                    q.Lambda('muscleRef',
+                        q.ContainsStr(
+                            q.LowerCase(q.Select(['data', 'name'], q.Get(q.Var('muscleRef')))),
+                            'back'
+                        )
+                    )
+                ),
+                /*
+                * First Param: params
+                * Second Param: expression
+                *
+                * anonymous function that performs lazy execution of custom code
+                * */
+                q.Lambda('muscleRef',
+                    q.Get(q.Var('muscleRef'))
                 )
             )
         )

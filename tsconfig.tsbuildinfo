@@ -477,7 +477,7 @@
         "affectsGlobalScope": false
       },
       "./src/functions/muscles.ts": {
-        "version": "c063ae6e3ca502c70aaf2c4d24a6cd041e610f737a64415e468355aea553915e",
+        "version": "b6210494e8f119ed9877a14dda8b5d50af426a296abcf1230d8c9184dced2c56",
         "signature": "f7b6adefeb81aab6b97a1e27d205a4312761fb54cd26d9bdd1f959671d5949e7",
         "affectsGlobalScope": false
       },
